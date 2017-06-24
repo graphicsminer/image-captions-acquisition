@@ -32,7 +32,7 @@ $ node scripts.js --version
 Change *HOST_NAME* in file GMGlobal class to host where you deploy backend nodejs  
 Build and run application
 
-![alt text](https://raw.githubusercontent.com/graphicsminer/image-captions-acquisition/master/temp/android-editor.jpg)
+<img src="https://github.com/vuthaiduy1990/image-captions-acquisition/blob/master/temp/android-editor.jpg" alt="alt text" width="250">
 
 ## Setup Web Application
 Change *base_url* in file GMGlobal class to host where you deploy backend nodejs  
@@ -41,7 +41,7 @@ $ node build.js
 $ You can host app using Apache server.
 </pre>
 
-![alt text](https://raw.githubusercontent.com/graphicsminer/image-captions-acquisition/master/temp/web-editor.jpg)
+<img src="https://github.com/vuthaiduy1990/image-captions-acquisition/blob/master/temp/web-editor.png" alt="alt text">
 
 
 # License
