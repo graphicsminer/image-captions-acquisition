@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/edit"
+        android:title="@string/menu_image_edit"/>
+    <item
+        android:id="@+id/moveToTask"
+        android:title="@string/menu_image_move_to_todo"/>
+    <item
+        android:id="@+id/delete"
+        android:title="@string/menu_image_delete"/>
+</menu>

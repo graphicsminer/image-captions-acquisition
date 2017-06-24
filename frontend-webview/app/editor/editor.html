@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Image Caption Editor</title>
+    <script type="text/javascript" src="../../assets/js/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/css/bootstrap.css" />
+    <script type="text/javascript" src="../../assets/bootstrap/js/bootstrap.js"></script>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <link rel="stylesheet" type="text/css" href="../../assets/bootstrap-select/bootstrap-select.css" />
+    <script type="text/javascript" src="../../assets/bootstrap-select/bootstrap-select.js"></script>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- https://github.com/bootstrap-tagsinput/bootstrap-tagsinput/issues/345 -->
+    <!-- https://github.com/bootstrap-tagsinput/bootstrap-tagsinput/issues/470 -->
+    <script type="text/javascript" src="../../assets/bootstrap-tag/bootstrap-tagsinput.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/bootstrap-tag/bootstrap-tagsinput.css" />
+    <script type="text/javascript" src="../../assets/bootstrap-tag/typeahead.bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/bootstrap-tag/bootstrap-tagsinput-typeahead.css" />
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <link rel="stylesheet" type="text/css" href="../../assets/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/slick/slick-theme.css" />
+    <script type="text/javascript" src="../../assets/slick/slick.js"></script>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <script type="text/javascript" src="../../assets/js/crypto/core.js"></script>
+    <script type="text/javascript" src="../../assets/js/crypto/md5.js"></script>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/editor.css" />
+    <script type="text/javascript" src="../../configuration.js"></script>
+    <script type="text/javascript" src="editor.js"></script>
+    <script type="text/javascript" src="../utils/helpers.js"></script>
+    <script type="text/javascript" src="../models/model.js"></script>
+</head>
+
+<body class="body">
+    <div id="alert-error" class="alert alert-danger col-md-11" role="alert"></div>
+    <div id="alert-success" class="alert alert-success col-md-11" role="alert"></div>
+    <div id="overlayWaiting">
+        <div class="overlay"></div>
+        <div class="waiting">
+            <img src="../../assets/img/waiting.gif">
+        </div>
+    </div>
+    <div class="container">
+        <!-- chart area -->
+        <div id="chartArea">
+            <a href="../chart/chart.html" id="chartAreaLink" target="_blank">Chart Area</a>
+            <hr/>
+        </div>
+        <!-- Filter and sort region -->
+        <div class="row">
+            <div class="row col-md-6">
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="form-group col-md-8 ">
+                            <label for="contributorSBox" class="control-label col-md-3">Contributor</label>
+                            <select id="contributorSBox" class="selectpicker col-md-9" multiple data-live-search="true" data-style="btn-info" title="">
+                                <!-- <option>Who are you ?</option> -->
+                                <!-- <option>Who are you ?</option> -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" id="reviewerSBoxContainer">
+                        <div class="form-group col-md-8 ">
+                            <label for="reviewerSBox" class="control-label col-md-3">Reviewer</label>
+                            <select id="reviewerSBox" class="selectpicker col-md-9" multiple data-live-search="true" data-style="btn-info" title="">
+                                <!-- <option>Who are you ?</option> -->
+                                <!-- <option>Who are you ?</option> -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="status" class="control-label col-md-3">Status</label>
+                            <select id="statusSBox" class="selectpicker col-md-9" multiple data-live-search="true" data-style="btn-warning" title="">
+                                <!-- <option>Done</option> -->
+                                <!-- <option>TODO</option> -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-11">
+                            <input id="inputBox" type="text" class="form-control" placeholder="Search by category">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <button type="button" class="btn btn-default" id="searchBtn">Search</button>
+                            <button type="button" class="btn btn-default" id="uploadBtn">Upload</button>
+                            <input type="file" id="uploadFileBtn" multiple style="display: none;" />
+                        </div>
+                        <label class="control-label col-md-5"><span id="result"></span>: results - current: <span id="currentSlide">0</span></label>
+                    </div>
+                </div>
+            </div>
+            <!-- Display image and infomation region -->
+            <div class="single-items image-container col-md-6" id="imageSliderShow">
+                <!-- <img src="../../assets/sample-image.jpg"></img> -->
+                <!-- <img src="../../assets/sample-image.jpg"></img> -->
+            </div>
+        </div>
+        <hr/>
+        <!-- Image information region -->
+        <div class="row">
+            <div class="form-group">
+                <label for="languageBtn" class="control-label col-md-2">Actions</label>
+                <div class="col-md-10">
+                    <span id="languageBtn" class="label label-success language-select" language='vi_VN'>Vietnamese</span>
+                    <button type="button" class="btn btn-default" id="moveToDoBtn">Move To TODO</button>
+                    <button type="button" class="btn btn-default" id="doneBtn">Move To DONE</button>
+                    <button type="button" class="btn btn-default" id="acceptBtn">Accept</button>
+                    <button type="button" class="btn btn-default" id="deleteBtn">Delete</button>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="form-group categories-info">
+                <label for="categoriesInfo" class="control-label col-md-2">Categories</label>
+                <div class="form-group col-md-10">
+                    <input id="categoriesInfo" type="text" class="form-control" placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group captions-info">
+                <label for="captionsInfo" class="control-label col-md-2">Captions</label>
+                <div class="form-group col-md-10">
+                    <input id="captionsInfo" type="text" class="form-control" placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="commentInput" class="control-label col-md-2">Comments</label>
+                <div class="form-group col-md-10">
+                    <textarea id="commentInput" class="form-control" rows="4"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="contributorInfo" class="control-label col-md-2">Contributor</label>
+                <label id="contributorInfo" class="col-md-10 form-group"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="reviewerInfo" class="control-label col-md-2">Reviewer</label>
+                <label id="reviewerInfo" class="col-md-10 form-group"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="statusInfo" class="control-label col-md-2">Status</label>
+                <label id="statusInfo" class="col-md-10 form-group"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="locationInfo" class="control-label col-md-2">Location</label>
+                <label id="locationInfo" class="form-group col-md-10"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="createdDateInfo" class="control-label col-md-2">Created Date</label>
+                <label id="createdDateInfo" class="form-group col-md-10"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="updatedDateInfo" class="control-label col-md-2">Updated Date</label>
+                <label id="updatedDateInfo" class="form-group col-md-10"></label>
+            </div>
+        </div>
+        <hr/>
+    </div>
+    <!-- Uploading model Modal -->
+    <div class="modal fade" id="uploadModalDialog" tabindex="-1" role="dialog" aria-labelledby="Upload Image" data-backdrop='static'>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Upload Image</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="progress">
+                        <div id="uploadingProgress" class="progress-bar" role="progressbar" aria-valuenow="0" style="width: 0%;" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                    <span id="uploadedNumber">0</span><span>&nbsp;images is uploaded successfully!</span>
+                    <div class="form-group">
+                        <label for="terninal">Terminal</label>
+                        <textarea class="form-control" rows="5" id="terminal" style="background: black;color: white;"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- delete confirmation dialog -->
+    <div class="modal fade" id="deleteConfirmDiag" tabindex="-1" role="dialog" aria-labelledby="" data-backdrop='static'>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Delete Confirmation Dialog</h4>
+                </div>
+                <div class="modal-body">Are you sure?</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button id="okBtn" type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

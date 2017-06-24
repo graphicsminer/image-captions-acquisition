@@ -1,0 +1,39 @@
+{
+    "thể thao, (sport)": ["sân bóng", "bóng đá", "nhà thi đấu", "bóng bàn", "cầu lông"],
+    "phong cảnh, (landscape)": ["công viên", "tuyết", "sông", "núi", "núi đá", "đồi", "sông", "đồi cát", "cánh đồng",
+        "hồ nước", "hồ", "hang động", "biển", "thạch nhũ", "bãi cỏ", "bãi biển", "vườn hoa", "thảm cỏ",
+        "suối", "thành phố", "rừng", "bờ biển", "đại dương", "con sông", "khuôn viên", "đồng cỏ", "mương",
+        "kênh", "thiên nhiên"
+    ],
+    "hoạt động, (activities)": ["ngoài trời", "chợ", "tốt nghiệp", "sự kiện", "đám cưới", "lễ hội", "cắm trại"],
+    "con người, (human)": ["người", "con người", "trẻ em", "cô gái", "phụ nữ", "cô gái", "cổ động viên", "cầu thủ",
+        "người du khách", "em bé", "đàn ông", "họa sĩ", "người đàn ông", "mọi người", "người phụ nữ"
+    ],
+    "động vật, (animal)": ["trâu", "bò", "chó", "mèo", "ngựa", "rùa"],
+    "thực vật, (plant)": ["cây", "hoa", "cây cối", "chậu cây", "cây hoa", "chậu hoa", "dừa cạn", "hoa giấy",
+        "hoa giấy đỏ", "hoa sen", "hoa giấy tím", "thịt", "bánh mì", "đồ ăn"
+    ],
+    "thực phẩm, (food)": ["thức ăn", "bánh ngọt", "bánh quy", "bánh"],
+    "công trình&phòng ốc, (building)": ["nhà", "nhà cửa", "ngôi nhà", "nhà cao tầng", "tòa nhà", "chùa chiền", "tượng",
+        "tượng đài", "nhà chung cư", "nhà thi đấu", "chốt bảo vệ", "đền thờ", "đền", "nhà máy", "nhà thờ",
+        "chùa", "chùa chiền", "ống khói", "sân vận động", "khán đài", "hồ bơi", "bể bơi", "phòng bếp",
+        "phòng làm việc", "phòng học", "phòng tranh", "bếp", "phòng họp", "chùa tháp", "phong khách", "hành lang",
+        "phòng ăn"
+    ],
+    "cửa hiệu, (store)": ["cửa hàng", "nhà hàng", "hiệu sách", "siêu thị", "gian hàng", "bảng thực đơn", "biển quảng cáo"],
+    "đồ vật, (funiture)": ["ghế", "ghế dài", "ghế đá", "chiếc ghế", "ghế nệm", "sofa", "ghế sofa", "ghế nhựa", "băng ghế",
+        "bàn", "đồ chơi", "đèn", "thùng rác", "điện thoại di động", "bàn ăn", "thùng các tông",
+        "mô hình đồ chơi", "đèn trần", "bát", "túi nhựa", "đĩa", "máy quay", "cốc tròn có quai", "đũa",
+        "mũ lưỡi trai", "chiếc ô", "dù", "cái bàn", "chai nước", "ván trượt tuyết", "mũ bảo hiểm",
+        "đồng hồ", "laptop", "lư hương", "máy tính xách tay", "máy tính", "bàn ghế", "máy chụp hình"
+    ],
+    "giao thông, (traffic)": ["giao thông", "đường phố", "vỉa hè", "cột điện", "đường", "con đường", "cây cầu",
+        "đường ray", "biển báo giao thông", "cầu", "cột điện", "cột đèn", "cột điện cao áp",
+        "đèn giao thông", "biển chỉ đường", "phố", "biển báo", "cột đèn đường"
+    ],
+    "phương tiện, (transportation)": ["xe máy", "xe hơi", "xe đạp", "ô tô", "ôtô", "tàu thuyền", "tàu du lịch",
+        "tàu hải quân", "thuyền", "tàu hỏa", "xe khách", "thuyền đánh cá", "tàu chở hàng", "tàu",
+        "máy bay", "xe đạp ba bánh", "tầu", "xe buýt", "oto", "con tàu", "phương tiện giao thông",
+        "xe lu", "xe ủi"
+    ]
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="3sp"
+    android:layout_marginRight="3sp"
+    android:layout_weight="1"
+    android:background="@drawable/round_tag_view"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingBottom="5sp"
+    android:paddingLeft="7sp"
+    android:paddingRight="7sp"
+    android:paddingTop="5sp">
+
+    <TextView
+        android:id="@+id/tvTagTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.9"
+        android:text="The nothing"/>
+
+    <ImageButton
+        android:id="@+id/ibRemove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5sp"
+        android:layout_weight="0.1"
+        android:background="@drawable/delete"/>
+
+</LinearLayout>

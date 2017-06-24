@@ -1,0 +1,17 @@
+{
+    "mongodb": {
+        "url": "mongodb://localhost:27017/image_caption_acquisition"
+    },
+    "server": {
+        "host": "localhost",
+        "port": 1508,
+        "secretKey": "image_caption_acquisition"
+    },
+    "dir": {
+        "logger": "logs",
+        "image_data": "data/image-data",
+        "temp": "data/temp",
+        "ic_bot": "data/ic_bot"
+    },
+    "mode": "test"
+}

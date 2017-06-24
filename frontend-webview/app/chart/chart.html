@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Image Caption Chart</title>
+    <script type="text/javascript" src="../../assets/js/jquery.js"></script>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/css/bootstrap.css" />
+    <script type="text/javascript" src="../../assets/bootstrap/js/bootstrap.js"></script>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <script type="text/javascript" src="../../assets/charts/d3.js"></script>
+    <script type="text/javascript" src="../../assets/charts/d3pie.js"></script>
+    <script type="text/javascript" src="../../assets/charts/d3.tip.js"></script>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/chart.css" />
+    <script type="text/javascript" src="../../configuration.js"></script>
+    <script type="text/javascript" src="chart.js"></script>
+    <script type="text/javascript" src="../utils/helpers.js"></script>
+    <script type="text/javascript" src="../models/model.js"></script>
+</head>
+
+<body class="body">
+    <div class="chart-area">
+        <div style="float: left;" id="contributorPieChart"></div>
+        <div id="contributorBarChart"></div>
+        <hr/>
+        <div id="categoriesBarChart">
+        </div>
+        <div class="form-group" style="margin-top: 10px">
+            <label for="categoryThreshold" class="control-label col-md-1">Threshold</label>
+            <div class="col-md-11">
+                <input id="categoryThreshold" type="number" class="form-control col-md-3" placeholder="" style="width:100px">                
+                <button type="button" class="btn btn-default" id="categoryThresholdRefreshBtn" style="margin-left: 10px">Refresh</button>
+                <button type="button" class="btn btn-default" id="categorySortBtn" style="margin-left: 10px">Sort</button>
+            </div>
+            <label style="margin-top: 10px; margin-left: 15px"><input id="categoryGrouped" type="checkbox"> Grouped</label>
+        </div>
+        <hr style="margin-top: 80px;" />
+        <div id="statusPieChart"></div>
+    </div>
+</body>
+
+</html>

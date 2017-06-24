@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">Image Caption Acquisition</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- common strings -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="save">Save</string>
+    <string name="loading">loading</string>
+
+    <!-- error notification string -->
+    <string name="error_add_image">Add new image failed!</string>
+    <string name="error_take_photo">Take photo failed!</string>
+    <string name="error_update_image">Update image failed!</string>
+    <string name="error_delete_image">Delete image failed!</string>
+    <string name="error_launch_voice_recognizer">Error initializing speech to text engine.</string>
+    <string name="error_pick_photo">Pick photo failed!</string>
+    <string name="error_not_photo_to_edit">No photo to edit</string>
+
+    <!-- success notification string -->
+    <string name="success_delete_all_syn_photos">Delete all sync photo successfully!</string>
+    <string name="success_load_all_images">All image are added into TODO</string>
+
+    <!-- ============== Activity ============== -->
+    <!-- naming rule: [activity]_[component]_name -->
+
+    <!-- Main activity -->
+    <string name="action_delete_all">Delete Synchronized Photos</string>
+    <string name="action_edit_all">Edit All</string>
+    <string name="gps_work_well">GPS look good</string>
+    <string name="gps_not_work">GPS not work. Try again!</string>
+    <string name="action_info">Information</string>
+
+    <!-- Drawer Item -->
+    <string name="drawer_header_title">Image Acquisition</string>
+    <string name="drawer_header_email">graphicsminer@gmail.com</string>
+    <string name="drawer_done">DONE</string>
+    <string name="drawer_setting">Setting</string>
+    <string name="drawer_todo">TODO</string>
+    <string name="drawer_sync">Sync</string>
+
+    <!-- Image list view -->
+    <string name="no_caption">No Caption</string>
+
+    <!-- Image Editor activity -->
+    <string name="aie_title">Image Editor</string>
+    <string name="aie_delete_image">Delete</string>
+    <string name="aie_move_to_todo">Move To TODO</string>
+    <string name="aie_save">Move To DONE</string>
+    <string name="aie_input_hint">Type category/caption</string>
+    <string name="aie_group_category">Categories</string>
+    <string name="aie_group_caption">Captions</string>
+
+    <!-- Synchronization activity -->
+    <string name="async_title">Sync</string>
+    <string name="async_label_server">Server</string>
+    <string name="async_label_username">Username</string>
+    <string name="async_label_password">Password</string>
+    <string name="async_button_start">Start</string>
+    <string name="async_button_stop">Stop</string>
+    <string name="async_notification_title">Sync Data</string>
+
+    <!-- Login activity -->
+    <string name="al_login_button">Login</string>
+    <string name="al_input_name_message">Please input your name</string>
+    <string name="al_input_name_hint">Input your name</string>
+
+
+    <!-- ============== Context menu ============== -->
+
+    <!-- Image context menu -->
+    <string name="menu_image_edit">Edit</string>
+    <string name="menu_image_delete">Delete</string>
+    <string name="menu_image_move_to_todo">Move to TODO</string>
+
+    <!-- ============== Dialog ============== -->
+    <string name="confirmation_message">Are you sure?</string>
+
+</resources>
